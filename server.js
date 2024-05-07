@@ -12,6 +12,7 @@ app.use(express.static("public"));
 
 const dbUrl = process.env.DB_URL;
 
+// mongoose接続
 mongoose
   .connect(dbUrl)
   .then((res) => app.listen("3000"))
