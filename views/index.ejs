@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>ブログ一覧</h1>
+    <% if(blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+    <div class="blog-card">
+      <a href="/detail/<%= blog._id %>" class="blog-link">
+        <h2 class="blog-title"><%= blog.title %></h2>
+        <p><%= blog.content %></p>
+      </a>
+    </div>
+    <% }); %> <% } else { %>
+    <p>投稿がありません</p>
+    <% } %>
+  </body>
+</html>
